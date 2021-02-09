@@ -19,5 +19,9 @@
   "homepage": "https://github.com/JomarHAN/pracitce-amazona#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }
