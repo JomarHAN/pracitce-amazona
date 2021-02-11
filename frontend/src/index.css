@@ -64,16 +64,20 @@ ul{
 li{
   margin-top: 1rem;
 }
+
+input,
+select,
+textarea,
 button{
   padding: 1rem;
   border-radius: 0.5rem;
   border: 0.1rem solid #a4a4a4;
   font-size: 1.6rem;
-    font-family: Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #f8f8f8;
-    cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  cursor: pointer;
 }
 button:hover{
   border: 0.1rem solid #404040;
