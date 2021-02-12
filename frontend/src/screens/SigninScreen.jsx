@@ -9,6 +9,7 @@ function SigninScreen(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
     : "/";
