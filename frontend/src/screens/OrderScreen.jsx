@@ -36,7 +36,7 @@ function OrderScreen(props) {
         }
       }
     }
-  }, [dispatch, orderId, sdkReady, order]);
+  }, [dispatch, order, orderId]);
 
   const successPaymentHandler = () => {};
 
@@ -149,7 +149,7 @@ function OrderScreen(props) {
                   </div>
                 </div>
               </li>
-              {!order.isPaid && (
+              {!order?.isPaid && (
                 <li>
                   {!sdkReady ? (
                     <LoadingBox />
