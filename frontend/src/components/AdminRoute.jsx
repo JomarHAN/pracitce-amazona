@@ -2,15 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
 
-function PrivateRoute({ component: Component, ...rest }) {
+function AdminRoute({ component: Component, ...rest }) {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   return (
     <Route
       {...rest}
       render={(props) =>
-        userInfo ? (
-          <Component {...props}></Component>
+        userInfo && userInfo.isAdmin ? (
+          <Component {...props} />
         ) : (
           <Redirect to="/signin" />
         )
@@ -19,4 +19,4 @@ function PrivateRoute({ component: Component, ...rest }) {
   );
 }
 
-export default PrivateRoute;
+export default AdminRoute;
