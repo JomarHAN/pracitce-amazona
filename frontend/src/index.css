@@ -1,18 +1,16 @@
-  
-  html {
-    font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    height: 100vh;
-    font-size: 1.6rem;
-    font-family: Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+html {
+  font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+  box-sizing: border-box;
 }
-
-#root{
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
   height: 100%;
 }
 
@@ -56,39 +54,43 @@ a {
 a:hover {
   color: #ff8000;
 }
-ul{
+ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
-li{
+li {
   margin-top: 1rem;
 }
-
 input,
 select,
 textarea,
-button{
+button {
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 0.1rem solid #a4a4a4;
+  border: 0.1rem #a4a4a4 solid;
   font-size: 1.6rem;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+button {
   background-color: #f8f8f8;
   cursor: pointer;
 }
-button:hover{
-  border: 0.1rem solid #404040;
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
+  border: 0.1rem #404040 solid;
 }
-button.primary{
+button.primary {
   background-color: #f0c040;
 }
-button.block{
+button.block {
   width: 100%;
 }
-button.small{
+button.small {
   font-size: 1.2rem;
 }
 /* Header */
@@ -101,13 +103,13 @@ a.brand {
   font-size: 3rem;
   font-weight: bold;
 }
-.badge{
+.badge {
   background-color: #f02020;
   color: #ffffff;
   border-radius: 50%;
   padding: 0.2rem 0.7rem;
   font-size: 1.4rem;
-  margin: 0.2rem;
+  margin-left: 0.2rem;
 }
 .row {
   display: flex;
@@ -118,23 +120,24 @@ a.brand {
 .row.center {
   justify-content: center;
 }
-.row.top{
+.row.top {
   align-items: flex-start;
 }
-.col-1{
+.col-1 {
   flex: 1 1 25rem;
 }
-.col-2{
+.col-2 {
   flex: 2 1 50rem;
 }
-.min-30{
+.min-30 {
   min-width: 30rem;
 }
+
 /* Image */
 img {
   border-radius: 0.5rem;
 }
-img.small{
+img.small {
   max-width: 5rem;
   width: 100%;
 }
@@ -142,7 +145,7 @@ img.medium {
   max-width: 29rem;
   width: 100%;
 }
-img.large{
+img.large {
   width: 100%;
 }
 
@@ -167,61 +170,55 @@ img.large{
   color: #f0c040;
   margin: 0.1rem;
 }
-
-.rating span:last-child{
+.rating span:last-child {
   color: #404040;
 }
-
 /* Alert */
-.loading{
-  display: block!important;
+.loading {
+  display: block !important;
 }
-.success{
+.success {
   color: #20a020;
 }
-.danger{
+.danger {
   color: #a02020;
 }
-.alert{
+.alert {
   padding: 1rem;
   border: 0.1rem solid transparent;
   border-radius: 0.5rem;
 }
-.alert-info{
+.alert-info {
   color: #2020a0;
   background-color: #e0e0ff;
 }
-.alert-danger{
+.alert-danger {
   color: #a02020;
-  background-color: #ffe0e0e0;
+  background-color: #ffe0e0;
 }
-.alert-success{
+.alert-success {
   color: #20a020;
   background-color: #eeffe0;
 }
-
 /* Form */
-.form{
+.form {
   max-width: 60rem;
   margin: 0 auto;
 }
-
 .form > div {
   display: flex;
   flex-direction: column;
   margin: 1rem;
 }
-
-.form label{
+.form label {
   margin: 1rem 0;
 }
-
-/* Drop down */
-.dropdown{
+/* Dropdown */
+.dropdown {
   display: inline-block;
   position: relative;
 }
-.dropdown-content{
+.dropdown-content {
   position: absolute;
   display: none;
   right: 0;
@@ -233,37 +230,35 @@ img.large{
   margin-top: 0.4rem;
   border-radius: 0.5rem;
 }
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown-content {
   display: block;
 }
-
 /* Checkout Steps */
-.checkout-steps > div{
+.checkout-steps > div {
   border-top: 0.3rem #c0c0c0 solid;
   color: #c0c0c0;
   flex: 1;
   padding: 1rem;
   font-weight: bold;
 }
-.checkout-steps > div.active{
+.checkout-steps > div.active {
   border-top-color: #f08000;
   color: #f08000;
 }
-
 /* Table */
-.table{
+.table {
   width: 100%;
   border-collapse: collapse;
 }
-.table tbody tr:nth-oftype(odd){
+.table tbody tr:nth-of-type(odd) {
   background-color: #f4f4f4;
 }
 .table td,
-.table th{
+.table th {
   text-align: left;
   border: 0.1rem solid #e4e4e4;
   padding: 0.5rem;
 }
-.table button{
+.table button {
   margin: 0 0.2rem;
 }
