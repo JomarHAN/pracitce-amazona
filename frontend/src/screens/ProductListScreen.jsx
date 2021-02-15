@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createProduct, listProduct } from "../actions/productActions";
+import {
+  createProduct,
+  deleteProduct,
+  listProduct,
+} from "../actions/productActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
+import {
+  PRODUCT_CREATE_RESET,
+  PRODUCT_DELETE_RESET,
+} from "../constants/productConstants";
 
 function ProductListScreen(props) {
   const productList = useSelector((state) => state.productList);
@@ -15,15 +22,29 @@ function ProductListScreen(props) {
     success: successCreate,
     product: createdProduct,
   } = productCreate;
+  const productDelete = useSelector((state) => state.productDelete);
+  const {
+    loading: loadingDelete,
+    success: successDelete,
+    error: errorDelete,
+  } = productDelete;
   const dispatch = useDispatch();
   useEffect(() => {
     if (successCreate) {
       dispatch({ type: PRODUCT_CREATE_RESET });
       props.history.push(`/product/${createdProduct._id}/edit`);
     }
+    if (successDelete) {
+      dispatch({ type: PRODUCT_DELETE_RESET });
+    }
     dispatch(listProduct());
-  }, [successCreate, dispatch, createdProduct, props.history]);
-  const deleteHandler = () => {};
+  }, [successCreate, dispatch, createdProduct, props.history, successDelete]);
+
+  const deleteHandler = (product) => {
+    if (window.confirm("Are you sure to delete it?")) {
+      dispatch(deleteProduct(product._id));
+    }
+  };
 
   const createHandler = () => {
     dispatch(createProduct());
@@ -36,6 +57,8 @@ function ProductListScreen(props) {
           Create Product
         </button>
       </div>
+      {loadingDelete && <LoadingBox />}
+      {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {loadingCreate && <LoadingBox />}
       {errorCreate && <MessageBox variant="danger">{errorCreate}</MessageBox>}
       {loading && <LoadingBox />}
