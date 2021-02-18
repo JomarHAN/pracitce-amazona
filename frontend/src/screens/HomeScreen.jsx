@@ -10,7 +10,7 @@ function HomeScreen() {
   const { loading, error, products } = productList;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(listProduct());
+    dispatch(listProduct({}));
   }, []);
 
   return (
