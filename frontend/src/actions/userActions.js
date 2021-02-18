@@ -73,6 +73,7 @@ export const signout = () => (dispatch) => {
     localStorage.removeItem('cartItems');
     localStorage.removeItem('shippingAddress');
     dispatch({ type: USER_SIGNOUT })
+    document.location.href = '/signin'
 }
 
 export const detailsUser = (userId) => async (dispatch, getState) => {
@@ -112,12 +113,13 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
 export const updateUser = (user) => async (dispatch, getState) => {
     dispatch({ type: USER_UPDATE_REQUEST, payload: user })
     const { userSignin: { userInfo } } = getState();
+
     try {
         const { data } = await Axios.put(`/api/users/${user._id}`, user, {
             headers: { Authorization: `Bearer ${userInfo.token}` }
         })
         dispatch({ type: USER_UPDATE_SUCCESS, payload: data })
-        localStorage.setItem('userInfo', JSON.stringify(data))
+
     } catch (error) {
         const message = error.response && error.response.data.message
             ? error.response.data.message
