@@ -20,6 +20,7 @@ import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import SigninScreen from "./screens/SigninScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 import UserListScreen from "./screens/UserListScreen";
+import SellerScreen from './screens/SellerScreen'
 
 function App() {
   const cart = useSelector(state => state.cart)
@@ -100,6 +101,7 @@ function App() {
           </div>
         </header>
         <main>
+          <Route path="/seller/:id" component={SellerScreen} />
           <Route path="/cart/:id?" component={CartScreen} />
           <Route path="/product/:id" component={ProductScreen} exact />
           <Route path="/product/:id/edit" component={ProductEditScreen} exact />
