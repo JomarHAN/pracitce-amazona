@@ -11,7 +11,15 @@ const data = {
             name: "Theresa",
             email: "theresa123@gmail.com",
             password: bcrypt.hashSync('1234', 8),
-            isAdmin: false
+            isAdmin: false,
+            isSeller: true,
+            seller: {
+                name: 'Puma',
+                logo: '/images/p4.jpg',
+                description: "best seller",
+                rating: 4.5,
+                numReviews: 129
+            }
         },
     ],
     products: [
